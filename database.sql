@@ -43,7 +43,8 @@ VALUES ('jesse', 'minneapolis', 500, 3400, 600000);
 --unload low transaction customers: How do you delete users 
 --that reside in miami OR phoenix and have completed fewer than 5 transactions.
 
-DELETE FROM "accounts" WHERE city = 'miami' AND city = 'phoenix' AND transactions_attempted < 5; 
+DELETE FROM "accounts" WHERE (city = 'miami' AND transactions_completed < 5) 
+OR (city = 'phoenix' AND transactions_completed < 5); 
 
 
 Anthony moved to Santa Fe.
